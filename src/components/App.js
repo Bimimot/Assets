@@ -13,28 +13,44 @@ import Asset from './Asset/Asset';
 function App() {
   
   const startArr = assetsRow.assets;
-  const myArr = Data(startArr);
-  console.log(myArr);
-  
+  const myArr = Data(startArr);  
 
   return (
     <div className="portfolio">
       <Header />
       <Total />
       
-      {myArr.map(({ id, type, name, amount, total }) => {
+      {myArr.map(function (item, i, arr) {
         return (
         <Asset 
-        id={id}
-        type={type}
-        name={name}
-        amount={amount}
-        total={total}
+        id={item.id}
+        type={(i === 0 || (i>0 && arr[i].type !== arr[i-1].type)) ? item.type : ''}
+        name={item.name}
+        amount={item.amount}
+        total={item.total}
         // yield={yield}
         />
         );
-        })} 
-     
+      })}
+      
+       
+
+      
+      {/* {myArr.map(({ item, i }) => {
+        console.log(item, 'i=', i);
+        return (
+          <Asset
+          // id={item.id}
+          // type={item.type}
+          // name={item.name}
+          // amount={item.amount}
+          // total={item.total}
+          // yield={yield}
+          />
+        );
+      })} 
+ */}
+
       {/* <Asset id="2" name="Polymetal" amount="1" total ="500" yield="2%"/> */}
     {/* 
     - получаем массив данных методом api
