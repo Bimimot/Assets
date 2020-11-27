@@ -1,8 +1,8 @@
 import React from 'react';
 // import './App.scss';
 
-import { assetsRow, api } from '../utils/Api';
-import Data from '../utils/Data';
+import { api } from '../utils/Api';
+import { data } from '../utils/Data';
 
 import './App.scss';
 
@@ -11,14 +11,9 @@ import Total from './Total/Total';
 import Asset from './Asset/Asset';
 
 const startArr = api.getDataAssets().assets; // получаем данные 
-const data = new Data(startArr, api);
-// const myArr = Data(startArr);  //
-const myArr = data.makeArr();
-
+const myArr = data.makeArr(startArr); // строим свой массив для портфеля
 
 function App() {
-
-
   return (
     <div className="portfolio">
       <Header />

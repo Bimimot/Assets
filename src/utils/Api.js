@@ -1,12 +1,4 @@
-import React from 'react';
-
-
 class Api{
-    getIcon(companyCode) {
-        
-        let urlIcon = 'https://divplan.com/media/icons/' + companyCode + '.png';
-        return (urlIcon);
-    }
 
     getDataAssets(){
         return (
