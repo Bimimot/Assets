@@ -1,0 +1,36 @@
+.asset{
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 48px 15% 15% 40% 10% 5%;    
+    padding: 0 8px;
+    margin: 8px 0 0 0;
+    max-width: 1168px;
+    min-height: 48px;
+    border: 1px solid #DDE3EB;
+    border-radius: 6px;
+
+    color: red;
+}
+
+.asset__icon{
+    max-width:40px;
+    max-height: 40px;
+    border: 1px blue dotted;
+}
+
+.asset__name{
+
+}
+
+.asset__amount{
+
+}
+
+.asset__total{
+
+}
+
+.asset__yield{
+
+}
