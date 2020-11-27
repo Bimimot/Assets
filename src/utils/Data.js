@@ -3,10 +3,11 @@ class Data {
     makeArr(arr) {
         this.arr = arr;
         this.sortArr(this.arr);
-        const assetsArr = this.arr.map((item) => {
+        const assetsArr = this.arr.map((item, i, arr) => {
             return ({
                 id: item.data.id,
-                type: item.data.type,
+                // type: item.data.type,
+                type: this.setType(item, i, arr),
                 icon: this.makeIcon(item),
                 name: item.data.name,
                 amount: this.makeAmount(item),
@@ -34,9 +35,18 @@ class Data {
     }
 
     makeYield(item) {
-        return (!!item.data.yield ? item.data.yield.toFixed(2) + '%' : 'N/A')
+        return (!!item.data.yield ? item.data.yield.toFixed(1) + '%' : 'N/A')
     }
 
+    setType(item, i, arr) {
+        return ((i === 0 || (i > 0 && arr[i].data.type !== arr[i - 1].data.type)) ? item.data.type : '')
+    }
+    
+    setIcon() {
+//         const
+// "https://divplan.com/static/img/default_icon.png"
+
+    }
 
 }
 

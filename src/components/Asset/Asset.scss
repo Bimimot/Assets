@@ -2,11 +2,12 @@
     position: relative;
     display: grid;
     align-items: center;
-    grid-template-columns: max-content 8% 15% 40% 10% 5%;    
+    grid-template-columns: max-content 25% 1fr 10% 10%;    
     column-gap: 8px;
     padding: 0 4px;
+    box-sizing: border-box;
     margin: 8px 0 0 0;
-    max-width: 1168px;
+    width: 100%;
     min-height: 48px;
     border: 1px solid #DDE3EB;
     border-radius: 6px;
