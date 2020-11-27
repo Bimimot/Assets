@@ -8,6 +8,7 @@ import './App.scss';
 
 import Header from './Header/Header';
 import Total from './Total/Total';
+import Intro from './Intro/Intro';
 import Asset from './Asset/Asset';
 
 const startArr = api.getDataAssets().assets; // получаем данные 
@@ -18,7 +19,7 @@ function App() {
     <div className="portfolio">
       <Header />
       <Total />
-
+      <Intro />
       {myArr.map(function (item, i, arr) {
         return (
           <Asset
@@ -28,7 +29,7 @@ function App() {
             name={item.name}
             amount={item.amount}
             total={item.total}
-          // yield={yield}
+            yield={item.yield}
           />
         );
       })}
