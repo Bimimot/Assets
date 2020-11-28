@@ -4,17 +4,21 @@
      font-weight: $font-weight;
 
     &__title{
-     margin: 40px 0 0 0;
+     margin: 10px 0 0 0;
      color: $text-color--shadow;
      font-size: $font-size--subtitle;
      line-height: $line-height--subtitle; 
      font-weight: $font-weight;
+
+        @media screen and(min-width: $screen-md){
+        margin: 40px 0 0 0;
+        }    
     }
 
     &__grid{
     display: grid;
     align-items: center;
-    grid-template-columns: $icon-size $column-name 1fr minmax($column-price, max-content) $column-yield;    
+    grid-template-columns: $icon-size $column-name*2 1fr minmax($column-price, max-content) minmax($column-yield, min-content); 
     column-gap: 8px;
         padding: 0 4px;
         box-sizing: border-box;
@@ -23,8 +27,11 @@
             min-height: $row-height;
             border: 1px solid $border-color;
             border-radius: 6px;
-
     color: $text-color;
+
+        @media screen and(min-width: $screen-md){
+            grid-template-columns: $icon-size $column-name 1fr minmax($column-price, max-content) $column-yield;            
+        }
     }
 
     &__icon{

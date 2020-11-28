@@ -3,8 +3,10 @@
     width: 100%;
     margin: 32px 0 8px 0;
     font-weight: $font-weight;
+    height: min-content;
 
     &__title{
+     margin: 0;
      font-size: $font-size--subtitle;
      line-height: $line-height--subtitle;
      color: $text-color--shadow;

@@ -1,6 +1,6 @@
 .header{
     position: relative;
-    margin: 115px 0 0 0;
+    margin: 25px 0 0 0;
     width: 100%;
     height: min-content;
     
@@ -9,6 +9,9 @@
     font-size: $font-size--title;
     line-height: $line-height--title;
     color: $text-color;
-    
+
+    @media screen and(min-width: $screen-md){
+    margin: 115px 0 0 0;
+        }    
     }
 }
