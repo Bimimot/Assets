@@ -3,12 +3,11 @@ class Data {
     makeArr(arr) {
         this.arr = arr;
         this.sortArr(this.arr);
-        console.log(this.arr);
         const assetsArr = this.arr.map((item, i, arr) => {
             return ({
-                id: item.data.id,                
+                id: item.data.id,
                 type: this.setType(item, i, arr),
-                icon: this.makeIcon(item),                
+                icon: this.makeIcon(item),
                 name: item.data.name,
                 amount: this.makeAmount(item),
                 total: this.countTotal(item),
@@ -19,24 +18,29 @@ class Data {
     }
 
     countPortfolio(arr) {
-        let totalPrice = 0;
-        let totalYield = 0;
-        let curPrice = 0;
-        let curYield = 0;
-        for (let i = 0; i < arr.length - 1; i++){
-            curPrice = arr[i].amount * arr[i].data.prices.RUB;
-            totalPrice = curPrice + totalPrice;            
-                curYield = arr[i].data.yield;
-                if(!!curYield) {totalYield = curYield * curPrice + totalYield};
-        }
-        totalYield = (totalYield / totalPrice).toFixed(2) + '%';
+        let totalPrice = this.countTotalPrice(arr);
+        let totalYield = this.countTotalYield(arr); // получаем абсолютную доходность
+        console.log(totalYield);
+        totalYield = (totalYield / totalPrice).toFixed(2) + '%'; //получаем относительную доходность
         totalPrice = Math.floor(totalPrice).toLocaleString('RU');
+        return ({ totalPrice: totalPrice, totalYield: totalYield })
+    }
 
-        return({totalPrice: totalPrice, totalYield: totalYield})
+    countTotalPrice(arr) {
+        return arr.reduce(function (sumPrice, item) {
+            return sumPrice + item.amount * item.data.prices.RUB;
+        }, 0);
+    }
+
+    countTotalYield(arr) {
+        return arr.reduce(function (sumYield, item) {
+            let curYield = (!!item.data.yield) ? item.data.yield : 0;
+            return sumYield + item.amount * item.data.prices.RUB * curYield; //возвращаем абсолютную доходность
+        }, 0);
     }
 
     sortArr() {
-        this.arr.sort(function (a, b) {            
+        this.arr.sort(function (a, b) {
             return a.data.type < b.data.type ? -1 : 1;
         });
     }
