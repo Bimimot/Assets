@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 
 import { api } from '../utils/Api';
 import { data } from '../utils/Data';

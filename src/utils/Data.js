@@ -28,7 +28,7 @@ class Data {
                 curYield = arr[i].data.yield;
                 if(!!curYield) {totalYield = curYield * curPrice + totalYield};
         }
-        totalYield = (totalYield / totalPrice).toFixed(1) + '%';
+        totalYield = (totalYield / totalPrice).toFixed(2) + '%';
         totalPrice = Math.floor(totalPrice).toLocaleString('RU');
 
         return({totalPrice: totalPrice, totalYield: totalYield})

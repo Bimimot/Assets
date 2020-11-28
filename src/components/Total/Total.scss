@@ -1,0 +1,37 @@
+.total{
+    position: relative;
+    width: 100%;
+    margin: 32px 0 8px 0;
+    font-weight: $font-weight;
+
+    &__title{
+     font-size: $font-size--subtitle;
+     
+     line-height: $line-height--subtitle;
+     color: $text-color--shadow;
+    }
+
+    &__table{
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: $icon-size $column-name 1fr;   
+    column-gap: 8px;
+    padding: 0 4px;
+        border-color: $border-color;
+        border-width: 1px;
+        border-radius: 6px 6px 0 0;
+        border-style: solid solid none solid;
+     
+    }
+
+    &__price{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    }
+
+    &__yield{
+    text-align: start;
+    }
+}

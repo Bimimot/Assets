@@ -2,22 +2,22 @@
     position: relative;
     display: grid;
     align-items: center;
-    grid-template-columns: max-content 25% 1fr 10% 10%;    
+    grid-template-columns: $icon-size $column-name 1fr $column-price $column-yield;    
     column-gap: 8px;
     padding: 0 4px;
     box-sizing: border-box;
     margin: 8px 0 0 0;
     width: 100%;
     min-height: 48px;
-    border: 1px solid #DDE3EB;
-    border-radius: 6px;
+        border: 1px solid $border-color;
+        border-radius: 6px;
 
     color: $text-color;
 }
 
 .asset__icon{
-    max-width:40px;
-    max-height: 40px;
+    max-width: $icon-size;
+    max-height: $icon-size;
     border-radius: 50%;
 }
 

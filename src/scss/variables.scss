@@ -3,10 +3,12 @@ $color-bg:                    #ffffff;
 $text-color:                  #000000;  
 $text-color--title:           #080317;      
 $text-color--shadow:          #8290A3;
- 
+
+$border-color:                #DDE3EB;
+
 $font-size:                   1rem;
 $font-size--title:            2.4rem;
-$font-size--subtitle:         .87rem;
+$font-size--subtitle:         0.86rem;
 
 $line-height:                 1.6;
 $line-height--title:          1.22;
@@ -14,6 +16,12 @@ $line-height--subtitle:       1.54;
 
  
 $font-family:                 'Inter', Arial, sans-serif;
+$font-weight:                 500;
+
+$icon-size:                   40px;
+$column-name:                 10%;
+$column-price:                10%;
+$column-yield:                10%; 
  
 $screen-xs:                   0;
 $screen-sm:                   425px;
