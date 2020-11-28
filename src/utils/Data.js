@@ -3,6 +3,7 @@ class Data {
     makeArr(arr) {
         this.arr = arr;
         this.sortArr(this.arr);
+        console.log(this.arr);
         const assetsArr = this.arr.map((item, i, arr) => {
             return ({
                 id: item.data.id,                
@@ -35,7 +36,9 @@ class Data {
     }
 
     sortArr() {
-        this.arr.sort((a, b) => a.data.type > b.data.type);
+        this.arr.sort(function (a, b) {            
+            return a.data.type < b.data.type ? -1 : 1;
+        });
     }
 
     makeIcon(item) {
@@ -55,7 +58,14 @@ class Data {
     }
 
     setType(item, i, arr) {
-        return ((i === 0 || (i > 0 && arr[i].data.type !== arr[i - 1].data.type)) ? item.data.type : '')
+        let type = ((i === 0 || (i > 0 && arr[i].data.type !== arr[i - 1].data.type)) ? item.data.type : '');
+        switch (type) {
+            case 'BOND': type = 'Bonds'; break;
+            case 'STOCK': type = 'Stocks'; break;
+            case 'ETF': type = 'ETFs'; break;
+            case 'CURRENCY': type = 'Currencies'; break;
+        }
+        return type;
     }
 
 }
