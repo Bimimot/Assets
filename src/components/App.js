@@ -19,11 +19,11 @@ function App() {
   return (
     <>
       <Header />
-      <Total total={total}/>
+      <Total total={total} />
       <Intro />
       {myArr.map(function (item, i, arr) {
         return (
-          <Asset item={item} key={i}/>
+          <Asset item={item} key={i} />
         );
       })}
     </>
