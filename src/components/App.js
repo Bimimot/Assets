@@ -13,12 +13,14 @@ import Asset from './Asset/Asset';
 
 const startArr = api.getDataAssets().assets; // получаем данные 
 const myArr = data.makeArr(startArr); // строим свой массив для портфеля
+const total = data.countPortfolio(startArr);
+
 
 function App() {
   return (
     <>
       <Header />
-      <Total />
+      <Total total={total}/>
       <Intro />
       {myArr.map(function (item, i, arr) {
         return (

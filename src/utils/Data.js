@@ -5,10 +5,9 @@ class Data {
         this.sortArr(this.arr);
         const assetsArr = this.arr.map((item, i, arr) => {
             return ({
-                id: item.data.id,
-                // type: item.data.type,
+                id: item.data.id,                
                 type: this.setType(item, i, arr),
-                icon: this.makeIcon(item),
+                icon: this.makeIcon(item),                
                 name: item.data.name,
                 amount: this.makeAmount(item),
                 total: this.countTotal(item),
@@ -16,6 +15,23 @@ class Data {
             })
         })
         return assetsArr;
+    }
+
+    countPortfolio(arr) {
+        let totalPrice = 0;
+        let totalYield = 0;
+        let curPrice = 0;
+        let curYield = 0;
+        for (let i = 0; i < arr.length - 1; i++){
+            curPrice = arr[i].amount * arr[i].data.prices.RUB;
+            totalPrice = curPrice + totalPrice;            
+                curYield = arr[i].data.yield;
+                if(!!curYield) {totalYield = curYield * curPrice + totalYield};
+        }
+        totalYield = (totalYield / totalPrice).toFixed(1) + '%';
+        totalPrice = Math.floor(totalPrice).toLocaleString('RU');
+
+        return({totalPrice: totalPrice, totalYield: totalYield})
     }
 
     sortArr() {
@@ -40,12 +56,6 @@ class Data {
 
     setType(item, i, arr) {
         return ((i === 0 || (i > 0 && arr[i].data.type !== arr[i - 1].data.type)) ? item.data.type : '')
-    }
-    
-    setIcon() {
-//         const
-// "https://divplan.com/static/img/default_icon.png"
-
     }
 
 }
