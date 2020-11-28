@@ -1,5 +1,5 @@
 import React from 'react';
-import icon from '../../images/intro-icon.png';
+import icon from './images/intro-icon.png';
 
 class Intro extends React.Component {
     render() {
