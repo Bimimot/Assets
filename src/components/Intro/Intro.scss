@@ -1,13 +1,22 @@
 .intro{
     position: relative;
-    max-width: 100%;
-    margin-left: -173px;
+    width: 100%;
     height: min-content;
+
+$adaptive-width: ($padding-min - $margin-intro)*2 + $width-maximum;
+$adaptive-margin: calc(50% - 50vw + $padding-min);
+margin-left: $adaptive-margin;
+
+    @media screen and(min-width: $adaptive-width){
+        width: 100%;
+        margin-left: $margin-intro;
+    }
 
     &__icon{
         width: $icon-size--intro;
         height: $icon-size--intro;
         margin: 12px;
+        
     }
 
 }

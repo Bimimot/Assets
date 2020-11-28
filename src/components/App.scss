@@ -8,12 +8,24 @@ body {
   font-weight: $font-weight;
   margin: 0;
   padding: 0;
+  
+  
+
 }
 
 #root{
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 1168px;
+  max-width: $width-maximum;
   margin: auto;
+
+  @media screen and (min-width: $screen-md){
+    padding: 0 35px 0 35px;
+  }
+
+  @media screen and (min-width: $screen-xl){
+    padding: 0;
+  }
+
 }

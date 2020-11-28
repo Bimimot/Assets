@@ -23,7 +23,7 @@ function App() {
       <Intro />
       {myArr.map(function (item, i, arr) {
         return (
-          <Asset item={item}/>
+          <Asset item={item} key={i}/>
         );
       })}
     </>
