@@ -1,40 +1,54 @@
-.asset__grid{
+.asset{
     position: relative;
+    width: 100%;
+     font-weight: $font-weight;
+
+    &__title{
+     margin: 40px 0 0 0;
+     color: $text-color--shadow;
+     font-size: $font-size--subtitle;
+     line-height: $line-height--subtitle; 
+     font-weight: $font-weight;
+    }
+
+    &__grid{
     display: grid;
     align-items: center;
-    grid-template-columns: $icon-size $column-name 1fr $column-price $column-yield;    
+    grid-template-columns: $icon-size $column-name 1fr minmax($column-price, max-content) $column-yield;    
     column-gap: 8px;
-    padding: 0 4px;
-    box-sizing: border-box;
-    margin: 8px 0 0 0;
-    width: 100%;
-    min-height: 48px;
-        border: 1px solid $border-color;
-        border-radius: 6px;
+        padding: 0 4px;
+        box-sizing: border-box;
+        margin-top: 8px;
+        width: 100%;
+            min-height: $row-height;
+            border: 1px solid $border-color;
+            border-radius: 6px;
 
     color: $text-color;
-}
+    }
 
-.asset__icon{
+    &__icon{
     max-width: $icon-size;
     max-height: $icon-size;
     border-radius: 50%;
-}
+    }
 
-.asset__name{
+    &__name{
     white-space: nowrap;
     overflow: hidden; 
     text-overflow: ellipsis; 
-}
+    }
 
-.asset__amount{
+    &__amount{
 
-}
+    }
 
-.asset__total{
+    &__total{
 
-}
+    }
 
-.asset__yield{
+    &__yield{
+        color: $text-color--shadow;
+    }
 
 }
