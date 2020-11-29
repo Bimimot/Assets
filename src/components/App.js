@@ -19,8 +19,8 @@ function App() {
   return (
     <>
       <Header />
-      <Total total={total} />
       <Intro />
+      <Total total={total} />      
       {myArr.map(function (item, i, arr) {
         return (
           <Asset item={item} key={i} />

@@ -1,23 +1,17 @@
 .intro{
     position: relative;
+    margin: 25px 0 0 0;
     width: 100%;
     height: min-content;
+    
+    &__title{
+    margin: 0;
+    font-size: $font-size--title;
+    line-height: $line-height--title;
+    color: $text-color;
 
-$adaptive-width: ($padding-min - $margin-intro)*2 + $width-maximum;
-$adaptive-margin: calc(50% - 50vw);
-$adaptive-margin: $adaptive-margin + $padding-min;
-margin-left: $adaptive-margin;
-
-    @media screen and(min-width: $adaptive-width){
-        width: 100%;
-        margin-left: $margin-intro;
+    @media screen and(min-width: $screen-md){
+    margin: 43px 0 0 0;
+        }    
     }
-
-    &__icon{
-        width: $icon-size--intro;
-        height: $icon-size--intro;
-        margin: 12px;
-        
-    }
-
 }

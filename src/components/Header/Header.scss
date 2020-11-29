@@ -1,17 +1,44 @@
 .header{
     position: relative;
-    margin: 25px 0 0 0;
-    width: 100%;
-    height: min-content;
-    
-    &__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(50% + 50vw - 10px);
+    min-height: 72px;
     margin: 0;
-    font-size: $font-size--title;
-    line-height: $line-height--title;
-    color: $text-color;
-
-    @media screen and(min-width: $screen-md){
-    margin: 115px 0 0 0;
-        }    
+    padding: 0;
+    
+    @media screen and (min-width: $screen-md){
+    width: calc(50% + 50vw - 35px);
     }
+
+    @media screen and(min-width: 1668px){
+        $adaptive-width: calc(100% + 240px);
+        width: $adaptive-width;
+    }
+
+    &__logo{
+        width: $icon-size--intro;
+        height: $icon-size--intro;
+        margin-left: 12px;
+        height: 48px;
+        width: 48px;
+        
+    }
+
+    &__btn-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-color--btn;
+    font-weight: $font-weigth--btn;
+        width: 76px;
+        height: 40px;
+    
+        border: none;
+        outline: none;    
+        border-radius: 8px;
+        background-color: $btn-color;
+    }
+
 }
