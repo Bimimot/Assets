@@ -20,7 +20,6 @@ class Data {
     countPortfolio(arr) {
         let totalPrice = this.countTotalPrice(arr);
         let totalYield = this.countTotalYield(arr); // получаем абсолютную доходность
-        console.log(totalYield);
         totalYield = (totalYield / totalPrice).toFixed(2) + '%'; //получаем относительную доходность
         totalPrice = Math.floor(totalPrice).toLocaleString('RU');
         return ({ totalPrice: totalPrice, totalYield: totalYield })
